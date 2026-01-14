@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>2026년 4대보험 요율 변경 안내</title>
+    <title>2026년 4대보험</title>
     <!-- Google Fonts CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -275,7 +275,7 @@
             <h3 class="font-bold text-xl mb-4 text-center">2026 4대보험 계산기</h3>
             
             <div class="input-group">
-                <label class="text-sm text-gray mb-1 block">월 세전 급여 (원)</label>
+                <label class="text-sm text-gray mb-1 block">월 세전 급여(원)</label>
                 <input type="text" id="salaryInput" class="input-field" placeholder="0" onkeyup="formatInput(this)">
             </div>
             
@@ -302,7 +302,7 @@
                     <span>총 공제액</span>
                     <span id="res-total">0원</span>
                 </div>
-                <p class="text-xs text-gray text-center mt-2">* 상/하한액 적용 및 10원 미만 절사 반영</p>
+                <p class="text-xs text-gray text-center mt-2">*비과세 미반영 단순 참고용</p>
             </div>
 
             <button class="action-btn close-btn" onclick="closeModal(event, true)">닫기</button>
@@ -377,7 +377,7 @@
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="m9 12 2 2 4-4"></path>
                         </svg>
-                        <span>참고: 소득대체율(받는 연금액 비율)이 기존 41.5% → <strong>43%로 상향</strong>됩니다.</span>
+                        <span>참고: 소득대체율(받는 연금액 비율)이<br>기존 41.5% → <strong>43%로 상향</strong>됩니다.</span>
                     </div>
                 </div>
             </div>
@@ -494,7 +494,7 @@
                         <span>SUMMARY</span>
                     </div>
                     
-                    <h2 class="text-2xl font-bold" style="margin-bottom: 0;">한눈에 보는<br>2026년 4대 보험료율</h2>
+                      <h2 class="text-2xl font-bold" style="margin-bottom: 1.5rem;">한눈에 보는<br>2026년 4대 보험료율</h2>
 
                     <div style="flex: 1; display: flex; align-items: center; width: 100%; padding: 1rem 0;">
                         <div style="width: 100%; background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden;">
