@@ -39,7 +39,8 @@
             display: flex;
             justify-content: center;
             align-items: center; 
-            padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom)) 20px;
+             /* 기본 여백 15px (기기 상관없이 통일) + 노치 대응 */
+            padding: max(15px, env(safe-area-inset-top)) 15px max(15px, env(safe-area-inset-bottom)) 15px;
         }
 
         /* --- Layout: Content Card --- */
