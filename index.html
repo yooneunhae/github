@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>2026년 4대보험 요율 변경 안내</title>
+    <title>2026년 4대보험</title>
     <!-- Google Fonts CDN (깃허브 호스팅을 위해 절대 경로로 변경) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,8 +42,8 @@
             justify-content: center;
             align-items: center; 
             
-            /* 기본 여백 24px (기기 상관없이 통일) + 노치 대응 */
-            padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom)) 24px;
+            /* 기본 여백 15px (기기 상관없이 통일) + 노치 대응 */
+            padding: max(15px, env(safe-area-inset-top)) 15px max(15px, env(safe-area-inset-bottom)) 15px;
         }
 
         /* --- Layout: Content Card --- */
@@ -77,15 +77,15 @@
             padding: 2rem;
             text-align: center;
             position: relative;
-        }
-        
-        /* Headers & Text */
+        }     
+       /* [수정 1] 헤더 영역 높이 축소 (padding 조절) */
         .header-section {
             background-color: #EFF6FF; /* blue-50 */
-            padding: 1.5rem;
-            padding-top: 2rem;
+            /* 기존 padding: 1.5rem; padding-top: 2rem; 에서 축소 */
+            padding: 1.2rem; 
+            padding-top: 1.4rem;
             border-bottom: 1px solid #DBEAFE; /* blue-100 */
-            flex-shrink: 0; /* 헤더 크기 고정 */
+            flex-shrink: 0;
         }
         .point-badge {
             display: flex;
@@ -95,14 +95,15 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
+        /* [수정 2] 메인 타이틀 글자 크기 축소 */
         .main-title {
-            font-size: 1.75rem; /* 3xl approx */
+            /* 기존 1.75rem 에서 축소 */
+            font-size: 1.5rem; 
             font-weight: 800;
-            line-height: 1.2;
-            color: #1F2937;
+            line-height: 1.35; /* 1.2 -> 1.35로 줄 간격 확대 */
+            color: #374151; /* #1F2937 -> #374151 (약 80% 농도의 진한 회색) */
             word-break: keep-all;
-        }
-        
+        }        
         .content-body {
             padding: 1.5rem;
             flex: 1;
