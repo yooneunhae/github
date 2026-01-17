@@ -32,8 +32,20 @@
         }
 
         .container {
-            width: 80%; /* 100% -> 80%로 변경하여 폭 축소 */
+            width: 80%; /* 기본(PC/태블릿)은 80% */
             max-width: 600px;
+            transition: width 0.3s ease; /* 부드러운 전환 효과 */
+        }
+
+        /* [수정됨] 모바일 대응 미디어 쿼리 */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%; /* 모바일에서는 95%로 넓게 사용 */
+                padding: 0 5px;
+            }
+            body {
+                padding: 15px 10px; /* 모바일에서 바디 여백도 조금 줄임 */
+            }
         }
 
         /* 2. 헤더 디자인 */
@@ -53,19 +65,31 @@
             line-height: 1.5;
         }
 
-        /* 3. 필터 버튼 (가운데 정렬 수정됨) */
+        /* 3. 필터 버튼 (가로 스크롤 및 줄바꿈 방지 개선) */
         .filter-wrapper {
             display: flex;
-            justify-content: center; /* 요청사항: 가운데 정렬 */
+            justify-content: center;
             margin-bottom: 20px;
+            width: 100%;
         }
         
         .filter-container {
-            display: inline-flex;
+            display: flex; /* inline-flex -> flex 로 변경하여 유연성 확보 */
             gap: 8px;
             padding: 5px;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 25px;
+            
+            /* 모바일에서 버튼이 많을 경우 자연스럽게 스크롤 처리 */
+            overflow-x: auto;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch; /* 부드러운 스크롤 */
+            scrollbar-width: none; /* 스크롤바 숨김 (파이어폭스) */
+        }
+        
+        /* 스크롤바 숨김 (크롬, 사파리) */
+        .filter-container::-webkit-scrollbar {
+            display: none;
         }
 
         .filter-btn {
@@ -78,6 +102,8 @@
             color: var(--text-sub);
             cursor: pointer;
             transition: all 0.2s ease;
+            white-space: nowrap; /* [중요] 글자 줄바꿈 절대 방지 */
+            flex-shrink: 0; /* 공간이 부족해도 버튼 크기 줄어들지 않음 */
         }
 
         .filter-btn.active {
@@ -333,7 +359,7 @@
         <p class="description">인사팀이 정리한 주요 질문 모음</p>
     </header>
 
-    <!-- 수정된 필터 버튼 (가운데 정렬) -->
+    <!-- 수정된 필터 버튼 (가운데 정렬 + 스크롤 최적화) -->
     <div class="filter-wrapper">
         <div class="filter-container">
             <button class="filter-btn active" onclick="filterFaq('all')">전체</button>
@@ -420,7 +446,7 @@
     <span class="fab-label" style="display:none;">문의</span>
 </button>
 
-<!-- 모달 팝업 (내용 업데이트됨) -->
+<!-- 모달 팝업 -->
 <div id="contactModal" class="modal-overlay" onclick="closeModal(event)">
     <div class="modal-card">
         <div class="modal-icon">
@@ -448,7 +474,7 @@
             </div>
         </div>
 
-        <!-- 구글 폼 연동 버튼 (예시 링크 사용) -->
+        <!-- 구글 폼 연동 버튼 -->
         <a href="https://forms.google.com/" target="_blank" class="google-form-btn">
             <i class="fab fa-google" style="margin-right:5px;"></i> 1:1 문의 남기기 (Google Form)
         </a>
